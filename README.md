@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Redux Middleware pattern
 
 In this project I attempt to introduce a pattern inspired by [Nir Kaufman's book - Thinking in Redux](https://leanpub.com/thinking-in-Redux)
@@ -13,13 +11,22 @@ In this project I attempt to introduce a pattern inspired by [Nir Kaufman's book
 - All features can <b>read</b> the state and use it 
 - Actions Types are in a single file
 
-### `npm start`
+### `npm run react`
 
-Runs the app in the development mode.<br>
+Runs the app in the development mode react implementation.<br>
 Open [http://localhost:4444](http://localhost:4444) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### 'npm run vue'
+
+TBD
+
+### 'npm run angular'
+
+TBD
+
+### 'npm run slimjs'
+
+TBD
 
 ## About the app
 

@@ -67,7 +67,7 @@ class ShowDetailsDialog extends React.Component {
                   >Cast</Typography>
                 </Grid>
                 {_embedded && _embedded.cast.map(({ person: { name: personName }, character: { name: characterName, image } }) => {
-                  return <Grid item>
+                  return !!(image && image.medium) && <Grid item>
                     <div>
                       {personName}
                       <hr />

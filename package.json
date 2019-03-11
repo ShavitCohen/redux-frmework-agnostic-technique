@@ -1,33 +1,22 @@
 {
   "name": "redux-middleware-technique",
-  "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@material-ui/core": "^3.7.0",
-    "@material-ui/icons": "^3.0.1",
-    "axios": "^0.18.0",
-    "lodash": "^4.17.11",
-    "qs": "^6.6.0",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-redux": "^6.0.0",
-    "react-render-html": "^0.6.0",
-    "react-scripts": "2.1.1",
-    "redux": "^4.0.1"
-  },
   "scripts": {
-    "start": "PORT=4444 react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "bootstrap": "lerna bootstrap",
+    "start": "echo 'try: yarn run react'",
+    "react": "yarn --cwd ./implementations/react start"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "devDependencies": {},
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "workspaces": [
+    "x-redux",
+    "implementations/react"
+  ],
+  "dependencies": {
+    "cwd": "^0.10.0"
+  }
 }

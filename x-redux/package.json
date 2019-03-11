@@ -1,0 +1,17 @@
+{
+  "name": "x-redux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cross-env": "^5.2.0",
+    "lodash": "^4.17.11",
+    "qs": "^6.6.0",
+    "redux": "^4.0.1"
+  }
+}

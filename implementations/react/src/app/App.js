@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import './App.css';
-import { tvShowSelected, userTyping } from '../redux/feature/search/search.actions';
+import { searchActions, showInfoActions } from 'x-redux';
 import { ShowsList } from './components/ShowsList';
 import PrimarySearchAppBar from './components/PrimarySearchAppBar';
 import ShowDetailsDialog from './components/ShowDetailsDialog';
-import { setModalState } from '../redux/feature/showInfo/showInfo.actions';
+
+const { tvShowSelected, userTyping } = searchActions;
+const { setModalState } = showInfoActions;
 
 class App extends Component {
 

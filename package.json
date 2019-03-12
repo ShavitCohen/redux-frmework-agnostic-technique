@@ -2,9 +2,10 @@
   "name": "redux-middleware-technique",
   "private": true,
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "init": "yarn",
     "start": "echo 'try: yarn run react'",
-    "react": "yarn --cwd ./implementations/react start"
+    "react": "cross-env PORT=4444 yarn --cwd ./implementations/react start",
+    "vue": "cross-env PORT=5555 yarn --cwd ./implementations/vue start"
   },
   "devDependencies": {},
   "postcss": {
@@ -14,9 +15,10 @@
   },
   "workspaces": [
     "x-redux",
-    "implementations/react"
+    "implementations/*"
   ],
   "dependencies": {
-    "cwd": "^0.10.0"
+    "cwd": "^0.10.0",
+    "cross-env": "*"
   }
 }

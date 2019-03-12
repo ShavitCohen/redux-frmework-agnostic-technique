@@ -12,11 +12,10 @@
     "react-render-html": "^0.6.0"
   },
   "devDependencies": {
-    "react-scripts": "^2.1.8",
-    "cross-env": "*"
+    "react-scripts": "^2.1.8"
   },
   "scripts": {
-    "start": "cross-env PORT=4444 react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

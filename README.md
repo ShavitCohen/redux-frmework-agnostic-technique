@@ -11,20 +11,22 @@ In this project I attempt to introduce a pattern inspired by [Nir Kaufman's book
 - All features can <b>read</b> the state and use it 
 - Actions Types are in a single file
 
-### `npm run react`
+###`npm run react`
 
 Runs the app in the development mode react implementation.<br>
 Open [http://localhost:4444](http://localhost:4444) to view it in the browser.
 
-### 'npm run vue'
+### `npm run vue`
+
+Runs the app in the development mode vue implementation.<br>
+Open [http://localhost:5555](http://localhost:5555) to view it in the browser.
+
+
+### `npm run angular`
 
 TBD
 
-### 'npm run angular'
-
-TBD
-
-### 'npm run slimjs'
+### `npm run slimjs`
 
 TBD
 

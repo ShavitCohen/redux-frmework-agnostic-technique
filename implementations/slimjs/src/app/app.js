@@ -19,68 +19,12 @@ import './components/header.js'
 import './components/show-card.js'
 import './components/show-info.js'
 
+import AppTemplate from './app.template.html';
+
 
 // application root custom element
 @tag('awesome-app')
-@template(/*html*/`
-<style>
-  :host {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    color: #444;
-  }
-
-  :host([has-selection]) {
-    background-color: #444;
-    color: #ddd;
-  }
-
-  :host, :host :not(show-info) {
-    transition: 450ms cubic-bezier(0.645, 0.045, 0.355, 1);
-  }
-
-  :host #results {
-    padding: 1rem;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-flow: wrap;
-  }
-
-  :host show-info {
-    position: absolute;
-    left: 20rem;
-    top: 5rem;
-  }
-
-  :host show-card {
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-    transform: translate3d(0px, 0px, 0px);
-    cursor: pointer;
-  }
-
-  :host([has-selection]) show-card:not([selected]) {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  :host([has-selection]) app-header {
-    transform: translate3d(0, -15rem, 0);
-  }
-
-  :host([has-selection]) show-card[selected] {
-    transform: translate3d({{leftTransform}}px, {{topTransform}}px, 0px);
-    pointer-events: none;
-  }
-</style>
-<app-header></app-header>
-<div id="results">
-  <show-card s:repeat="shows as show" click="selectShow">{{show.name}}</show-card>
-</div>
-<show-info bind:show="showInfo" on-close="closeInfo"></show-info>
-`)
+@template(AppTemplate)
 @useShadow(true)
 class App extends Slim {
 
@@ -98,7 +42,7 @@ class App extends Slim {
 
   selectShow ({target: card}) {
     store.dispatch(searchActions.tvShowSelected(card.show));
-    this.leftTransform = 15 - card.offsetLeft;
+    this.leftTransform = 25 - card.offsetLeft;
     this.topTransform = 15 - card.offsetTop;
     card.setAttribute('selected', '');
   }

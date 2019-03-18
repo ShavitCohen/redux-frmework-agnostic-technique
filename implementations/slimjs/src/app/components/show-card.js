@@ -3,13 +3,22 @@ import { tag, template, useShadow } from "slim-js/Decorators";
 @tag('show-card')
 @template(/*html*/`
 <style>
+  :host-context([has-selection]) {
+    opacity: 0.06;
+    pointer-events: none;
+    filter: blur(3px);
+  }
+  :host([selected]) {
+    opacity: 1;
+    filter: blur(0);
+  }
   :host {
     display: inline-flex;
     background-color: white;
     color: black;
     padding: 1rem;
     width: 14rem;
-    height: 21rem;
+    height: 23rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -24,12 +33,6 @@ import { tag, template, useShadow } from "slim-js/Decorators";
 </style>
 <h3>{{show.name}}</h3>
 <img bind:src="show.image" bind:alt="show.name" />
-<div>score: {{roundScore(show.score)}}</div>
 `)
 @useShadow(true)
-class ShowCard extends Slim {
-
-  roundScore (score = 0) {
-    return score.toFixed(1);
-  }
-}
+class ShowCard extends Slim {}

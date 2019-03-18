@@ -7,15 +7,10 @@ import { connect } from "../store/connect";
 @template(/*html*/`
 <style>
   :host {
-    transition: 1750ms cubic-bezier(0.645, 0.045, 0.355, 1);
     transform: translate3d(150px, 0, 0);
-    left: 20rem;
     padding-right: 2rem;
     color: #444;
     transition: 850ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    position: absolute;
-    left: 20rem;
-    top: 5rem;
     opacity: 0;
   }
   :host-context([has-selection]) {
@@ -27,12 +22,24 @@ import { connect } from "../store/connect";
     color: inherit;
     text-decoration: none;
   }
+  .genre {
+    border-radius: 0.2rem;
+    font-size: 0.8rem;
+    background-color: #efefef;
+    color: #444;
+    padding: 0.2rem;
+    margin-right: 0.5rem;
+  }
 </style>
 <div s:if="show">
   <a href="#" click="close">⬅️ Go Back</a>
   <h1>{{show.name}}</h1>
+  <div s:if="show.genres.length">
+    Genres: <span class="genre" s:repeat="show.genres as genre">{{genre}}</span>
+  </div>
   <p>Language: {{show.language}}</p>
   <p bind:inner-H-T-M-L="getSummary(show)"></p>
+  <a s:if="show.officialSite" bind:href="show.officialSite" target="_blank">Visit Website</a>
 </div>
 `)
 @useShadow(true)

@@ -1,0 +1,12 @@
+:root {
+  --accent-color: #3f51b5;
+  --header-text-color: #eeeeee;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+}

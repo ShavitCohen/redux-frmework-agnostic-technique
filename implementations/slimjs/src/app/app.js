@@ -3,7 +3,7 @@ import { tag, template, useShadow } from 'slim-js/Decorators'
 
 // redux adapter
 import { connect } from './store/connect'
-import { store, searchActions, showInfoActions } from 'x-redux';
+import { store, searchActions } from 'x-redux';
 
 // Stylesheets
 import '../index.css';
@@ -18,6 +18,7 @@ import 'slim-js/directives/all.js'
 import './components/header.js'
 import './components/show-card.js'
 import './components/show-info.js'
+import './components/cast-memeber.js'
 
 import AppTemplate from './app.template.html';
 
@@ -28,45 +29,38 @@ import AppTemplate from './app.template.html';
 @useShadow(true)
 class App extends Slim {
 
-  constructor () {
-    super();
-    this.shows = [];
-    this.leftX = 0;
-    this.topX = 0;
-    this.showInfo = undefined;
-  }
-
   cleanupCards () {
     this.findAll('show-card').forEach(card => card.removeAttribute('selected'));
   }
 
+  clear () {
+    this.shows = [];
+  }
+
   selectShow ({target: card}) {
+    this.cleanupCards();
+    card.setAttribute('selected', '');
     store.dispatch(searchActions.tvShowSelected(card.show));
     this.leftTransform = 25 - card.offsetLeft;
     this.topTransform = 15 - card.offsetTop;
-    card.setAttribute('selected', '');
   }
 
   @connect('showInfo')
   infoResults(data) {
     if (data.info) {
+      this.show = data.info;
+    }
+    if (data.isOpen) {
       this.setAttribute('has-selection', '');
-      requestAnimationFrame(() => {
-        this.showInfo = data.isOpen ? data.info : undefined;
-      })
     }
     if (!data.isOpen) {
-      this.showInfo = undefined;
       window.scrollTo({top: 0});
       this.removeAttribute('has-selection');
-      this.cleanupCards();
     }
   }
 
   @connect('search')
   searchResults (searchData) {
-    if (!this.showInfo) {
-      this.shows = searchData.shows || [];
-    }
+    this.shows = searchData.shows || [];
   }
 }

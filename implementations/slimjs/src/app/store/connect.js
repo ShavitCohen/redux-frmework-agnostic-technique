@@ -8,16 +8,21 @@ export function connect(namespace) {
     const oConnectedCallback = proto.connectedCallback || noop;
     const oDisconnectedCallback = proto.disconnectedCallback || noop;
     proto.connectedCallback = function () {
+      let currentValue;
       if (unsubscribe) {
         unsubscribe();
       }
       oConnectedCallback.call(this);
       unsubscribe = store.subscribe(() => {
         const state = store.getState();
+        if (currentValue === state[namespace]) {
+          return;
+        }
+        currentValue = state[namespace];
         if (typeof this[key] === 'function') {
-          this[key](state[namespace])
+          this[key](currentValue)
         } else {
-          this[key] = state[namespace];
+          this[key] = currentValue;
         }
       })
     };

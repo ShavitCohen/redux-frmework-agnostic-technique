@@ -48,9 +48,9 @@
     transform: translate3d({{leftTransform}}px, {{topTransform}}px, 0px);
   }
 </style>
-<app-header></app-header>
+<app-header input="clear"></app-header>
 <div id="results">
-  <show-card s:repeat="shows as show" click="selectShow">{{show.name}}</show-card>
+  <show-card  s:repeat="shows as show" click="selectShow">{{show.name}}</show-card>
 </div>
-<show-info bind:show="showInfo" on-close="closeInfo"></show-info>
+<show-info on-close="closeInfo"></show-info>
 `

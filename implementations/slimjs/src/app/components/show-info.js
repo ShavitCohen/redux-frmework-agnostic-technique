@@ -30,6 +30,11 @@ import { connect } from "../store/connect";
     padding: 0.2rem;
     margin-right: 0.5rem;
   }
+  #cast-list {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+  }
 </style>
 <div s:if="show">
   <a href="#" click="close">⬅️ Go Back</a>
@@ -40,15 +45,16 @@ import { connect } from "../store/connect";
   <p>Language: {{show.language}}</p>
   <p bind:inner-H-T-M-L="getSummary(show)"></p>
   <a s:if="show.officialSite" bind:href="show.officialSite" target="_blank">Visit Website</a>
+  <div s:if="show._embedded.cast.length">
+    <h2>Cast:</h2>
+    <div id="cast-list">
+      <cast-member class="cast" s:repeat="show._embedded.cast as member"></cast-member>
+    </div>
+  </div>
 </div>
 `)
 @useShadow(true)
 class ShowInfo extends Slim {
-
-  constructor () {
-    super();
-    this.show = {};
-  }
 
   @connect('showInfo')
   onShowChanged (data) {
@@ -63,11 +69,4 @@ class ShowInfo extends Slim {
     return info && info.summary ? info.summary : 'No Summary';
   }
 
-  connectedCallback () {
-    super.connectedCallback();
-  }
-
-  disconnectedCallback () {
-    super.disconnectedCallback();
-  }
 }

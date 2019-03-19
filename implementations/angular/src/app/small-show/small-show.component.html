@@ -1,0 +1,11 @@
+<div (click)="onSelectShow()">
+  <div>
+    {{show.name}}
+  </div>
+  <div>
+    <img [src]="show.image">
+  </div>
+  <div>
+    Score: {{show.score | score}}
+  </div>
+</div>

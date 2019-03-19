@@ -1,0 +1,40 @@
+:host {
+  .cast {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .header {
+    background-color: #3f51b5;
+    color: white;
+    font-size: 1.25rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+    display: flex;
+    align-items: center;
+  }
+  .close-icon{
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    path {}
+    fill: white;
+  }
+  div.container {
+    display: flex;
+    div {
+      padding: 12px;
+    }
+
+    .summary {
+      width: 50%;
+    }
+  }
+  img {
+    max-width: 400px;
+    height: auto;
+  }
+}

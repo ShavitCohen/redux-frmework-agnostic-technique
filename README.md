@@ -1,17 +1,17 @@
 ## Redux Middleware pattern
 
-In this project I attempt to introduce a pattern inspired by [Nir Kaufman's book - Thinking in Redux](https://leanpub.com/thinking-in-Redux) <br />
+In this project I introduce a pattern inspired by [Nir Kaufman's book - Thinking in Redux](https://leanpub.com/thinking-in-Redux) <br />
 
-In this practice the application business logic is being driven by redux as an [exportable package](./redux-logic-layer/index.js) that can be imported from any ui implementation. <br />
+In this practice the application business logic is being driven by Redux as an [exportable package](./redux-logic-layer/index.js) that can be imported from any UI implementation. <br />
 
-In this repo there are 4 different implementation which all use the same redux driven business logic to fetch data and update the state. 
+In this repo there are four different implementations which all use the same Redux driven business logic to fetch data and update the state. 
 
 ### This pattern has few simple ground rules:
 
-- Split redux folder from your UI - to be able to replace your framework easily.
-- Reducers are pure functions which has no logic
-- Actions creators are pure functions which has no logic
-- All the logic should be placed in a redux middlewares
+- Split Redux folder from your UI folder - to be able to replace your framework easily.
+- Reducers are pure functions which have no logic
+- Actions creators are pure functions which have no logic
+- All the logic should be placed in Redux middlewares
 - Features can only change their feature-state.
 - All features can <b>read</b> the complete app state and use it 
 - Actions Types are in a single file
@@ -19,14 +19,15 @@ In this repo there are 4 different implementation which all use the same redux d
 
 ## About the app
 
-The app is pretty stupid, Created just to introduce this pattern, it basically 
-uses [TvMaze API](http://www.tvmaze.com/) to search and present data about tv-shows
+The app is pretty simple, created just to introduce this pattern, it basically 
+uses [TvMaze API](http://www.tvmaze.com/) to search and present data about TV shows
 
-Don't be lazy, Run it !
+Don't be lazy, run it!
 
 ### Installation
-```$js
-yarn install // only from the root folder (this is a yarn-workspaces monorepo)
+Should be run once, from the root folder (this is a [yarn-workspaces](https://yarnpkg.com/lang/en/docs/workspaces/) monorepo)
+```
+yarn install
 ```
 
 ### React

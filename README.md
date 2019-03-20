@@ -37,7 +37,7 @@ yarn install
 
 ### React
 ```
-yarn run react
+yarn react
 ```
 
 Runs the app in the development mode [React](https://reactjs.org/) implementation.<br>
@@ -45,7 +45,7 @@ Open [http://localhost:4444](http://localhost:4444) to view it in the browser.
 
 ### VueJS
 ```
-yarn run vue
+yarn vue
 ```
 
 Runs the app in the development mode [VueJS](https://vuejs.org/) implementation.<br>
@@ -54,7 +54,7 @@ Open [http://localhost:5555](http://localhost:5555) to view it in the browser.
 
 ### Angular
 ```
-yarn run angular
+yarn angular
 ```
 
 Runs the app in the development mode [Angular](https://angular.io/) implementation.<br>
@@ -62,7 +62,7 @@ Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
 
 ### SlimJS
 ```
-yarn run slimjs
+yarn slimjs
 ```
 
 Runs the app in the development mode [SlimJS](http://slimjs.com) implementation.<br>

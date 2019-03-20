@@ -3,15 +3,15 @@
   "private": true,
   "scripts": {
     "init": "yarn",
-    "start": "echo 'try: yarn run react'",
-    "react": "cross-env PORT=4444 yarn --cwd ./implementations/react start",
-    "vue": "cross-env PORT=5555 yarn --cwd ./implementations/vue start",
-    "slimjs": "cross-env PORT=9000 yarn --cwd ./implementations/slimjs start",
-    "angular": "cross-env PORT=4200 yarn --cwd ./implementations/angular start",
-    "build:react": "yarn --cwd ./implementations/react build",
-    "build:vue": "yarn --cwd ./implementations/vue build",
-    "build:slimjs": "yarn --cwd ./implementations/slimjs build",
-    "build:angular": "yarn --cwd ./implementations/angular build"
+    "start": "echo 'try: yarn react'",
+    "react": "cross-env PORT=4444 yarn workspace @implementations/react start",
+    "vue": "cross-env PORT=5555 yarn workspace @implementations/vue start",
+    "slimjs": "cross-env PORT=9000 yarn workspace slimjs-client-boilerplate start",
+    "angular": "cross-env PORT=4200 yarn workspace angular start",
+    "build:react": "yarn workspace @implementations/react build",
+    "build:vue": "yarn workspace @implementations/vue build",
+    "build:slimjs": "yarn workspace slimjs-client-boilerplate build",
+    "build:angular": "yarn workspace angular build"
   },
   "devDependencies": {
     "webpack-cli": "^3.3.0"

@@ -7,7 +7,11 @@
     "react": "cross-env PORT=4444 yarn --cwd ./implementations/react start",
     "vue": "cross-env PORT=5555 yarn --cwd ./implementations/vue start",
     "slimjs": "cross-env PORT=9000 yarn --cwd ./implementations/slimjs start",
-    "angular": "cross-env PORT=4200 yarn --cwd ./implementations/angular start"
+    "angular": "cross-env PORT=4200 yarn --cwd ./implementations/angular start",
+    "build:react": "yarn --cwd ./implementations/react build",
+    "build:vue": "yarn --cwd ./implementations/vue build",
+    "build:slimjs": "yarn --cwd ./implementations/slimjs build",
+    "build:angular": "yarn --cwd ./implementations/angular build"
   },
   "devDependencies": {
     "webpack-cli": "^3.3.0"

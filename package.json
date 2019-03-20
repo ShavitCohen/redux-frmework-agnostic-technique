@@ -5,9 +5,12 @@
     "init": "yarn",
     "start": "echo 'try: yarn run react'",
     "react": "cross-env PORT=4444 yarn --cwd ./implementations/react start",
-    "vue": "cross-env PORT=5555 yarn --cwd ./implementations/vue start"
+    "vue": "cross-env PORT=5555 yarn --cwd ./implementations/vue start",
+    "slimjs": "cross-env PORT=1337 yarn --cwd ./implementations/slimjs start"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack-cli": "^3.3.0"
+  },
   "postcss": {
     "plugins": {
       "autoprefixer": {}
@@ -18,7 +21,8 @@
     "implementations/*"
   ],
   "dependencies": {
+    "cross-env": "*",
     "cwd": "^0.10.0",
-    "cross-env": "*"
+    "x-redux": "file:x-redux"
   }
 }

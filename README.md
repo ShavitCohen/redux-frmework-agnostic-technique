@@ -16,6 +16,11 @@ In this repo there are four different implementations which all use the same Red
 - All features can <b>read</b> the complete app state and use it 
 - Actions Types are in a single file
 
+## Live demo
+- [React](https://redux-dev-pattern-react.netlify.com/)
+- [VueJS](https://redux-dev-pattern-vue.netlify.com/)
+- [Angular](https://redux-dev-pattern-angular.netlify.com/)
+- [SlimJS](https://redux-dev-pattern-slimjs.netlify.com/)
 
 ## About the app
 

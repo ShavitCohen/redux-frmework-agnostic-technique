@@ -41,6 +41,6 @@
   },
   "dependencies": {
     "slim-js": "^4.0.1",
-    "x-redux": "*"
+    "redux-logic-layer": "*"
   }
 }

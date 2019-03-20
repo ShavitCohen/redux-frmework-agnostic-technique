@@ -16,7 +16,7 @@
 
 <script>
   import { mapActions } from 'redux-vuex';
-  import { searchActions, showInfoActions } from 'x-redux';
+  import { searchActions, showInfoActions } from 'redux-logic-layer';
   import ShowsList from './components/ShowsList';
   import PrimarySearchAppBar from './components/PrimarySearchAppBar';
   import ShowDetailsDialog from './components/ShowDetailsDialog';

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {searchActions, showInfoActions, store} from 'x-redux';
+import {searchActions, showInfoActions, store} from 'redux-logic-layer';
 
 const {userTyping} = searchActions;
 

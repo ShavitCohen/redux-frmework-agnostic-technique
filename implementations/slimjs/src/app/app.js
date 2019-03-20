@@ -3,7 +3,7 @@ import { tag, template, useShadow } from 'slim-js/Decorators'
 
 // redux adapter
 import { connect } from './store/connect'
-import { store, searchActions } from 'x-redux';
+import { store, searchActions } from 'redux-logic-layer';
 
 // Stylesheets
 import '../index.css';

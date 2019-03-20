@@ -6,7 +6,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HeaderComponent} from './header/header.component';
 import {FormsModule} from '@angular/forms';
 import {NgReduxModule} from '@angular-redux/store';
-import {store} from 'x-redux';
+import {store} from 'redux-logic-layer';
 import {SearchResultsComponent} from './search-results/search-results.component';
 import { SmallShowComponent } from './small-show/small-show.component';
 import { ScorePipe } from './score.pipe';

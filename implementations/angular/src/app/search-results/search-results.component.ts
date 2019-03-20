@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {store, showInfoActions} from 'x-redux';
+import {store, showInfoActions} from 'redux-logic-layer';
 import {MatDialog} from '@angular/material';
 import {ShowInfoDialogComponent} from '../show-info-dialog/show-info-dialog.component';
 

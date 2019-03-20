@@ -1,6 +1,6 @@
 import { tag, template, useShadow } from "slim-js/Decorators";
 
-import { store, showInfoActions } from 'x-redux';
+import { store, showInfoActions } from 'redux-logic-layer';
 import { connect } from "../store/connect";
 
 @tag('show-info')

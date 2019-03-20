@@ -1,7 +1,7 @@
 import {Component, ElementRef, OnDestroy, OnInit} from '@angular/core';
 import {MatDialogRef} from '@angular/material';
 import {Subscription} from 'rxjs';
-import {store} from 'x-redux';
+import {store} from 'redux-logic-layer';
 
 @Component({
   selector: 'app-show-info-dialog',

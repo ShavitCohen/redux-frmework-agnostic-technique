@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {store, showInfoActions, searchActions} from 'x-redux';
+import {store, showInfoActions, searchActions} from 'redux-logic-layer';
 
 const {openShowInfoModal} = showInfoActions;
 

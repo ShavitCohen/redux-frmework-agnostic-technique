@@ -18,12 +18,12 @@
     }
   },
   "workspaces": [
-    "x-redux",
+    "redux-logic-layer",
     "implementations/*"
   ],
   "dependencies": {
     "cross-env": "*",
     "cwd": "^0.10.0",
-    "x-redux": "file:x-redux"
+    "redux-logic-layer": "file:redux-logic-layer"
   }
 }

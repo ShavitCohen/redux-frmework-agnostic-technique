@@ -9,7 +9,7 @@
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
     "react-render-html": "^0.6.0",
-    "x-redux": "*"
+    "redux-logic-layer": "*"
   },
   "devDependencies": {
     "react-scripts": "^2.1.8"

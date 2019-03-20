@@ -1,4 +1,4 @@
-import { store } from 'x-redux';
+import { store } from 'redux-logic-layer';
 const noop = () => {};
 export function connect(namespace) {
   return function (proto, key) {

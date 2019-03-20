@@ -1,7 +1,7 @@
 import { tag, template, useShadow } from "slim-js/Decorators";
 import { Slim } from "slim-js";
 
-import { searchActions, store } from 'x-redux';
+import { searchActions, store } from 'redux-logic-layer';
 import { debounce } from "../../helpers/debounce";
 
 @tag('app-header')

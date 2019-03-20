@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import './plugins/vuetify';
 import App from './App.vue';
-import { store } from 'x-redux';
+import { store } from 'redux-logic-layer';
 import { connect } from 'redux-vuex';
 
 connect({

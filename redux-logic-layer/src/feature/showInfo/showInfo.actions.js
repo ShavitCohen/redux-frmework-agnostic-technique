@@ -17,7 +17,7 @@ export const getShowInfo = ({ id }) => ({
   meta: {
     feature: SHOW_INFO,
     sourceAction: AT.GET_SHOW_INFO,
-    url: `http://api.tvmaze.com/shows/${id}?embed=cast`,
+    url: `https://api.tvmaze.com/shows/${id}?embed=cast`,
     method: 'GET',
   },
 });

@@ -18,7 +18,7 @@ export const getTvShows = ({ q }) => ({
   meta: {
     feature: SEARCH,
     sourceAction: AT.GET_TV_SHOWS,
-    url: 'http://api.tvmaze.com/search/shows',
+    url: 'https://api.tvmaze.com/search/shows',
     method: 'GET',
   },
 });

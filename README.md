@@ -3,32 +3,40 @@
 In this project I attempt to introduce a pattern inspired by [Nir Kaufman's book - Thinking in Redux](https://leanpub.com/thinking-in-Redux)
 ### This pattern has few ground rules:
 
-- Devide redux folder from your UI - to be able to replace your framework easily.
-- Reducers are stupid and has no logic
-- Actions creators are stupid and has no logic
-- All the logic should be placed in middlewares
-- Every feature <b>responsible to change</b> to it's own state
-- All features can <b>read</b> the state and use it 
+- Split redux folder from your UI - to be able to replace your framework easily.
+- Reducers are pure functions which has no logic
+- Actions creators are pure functions which has no logic
+- All the logic should be placed in a redux middlewares
+- Features can only change their feature-state.
+- All features can <b>read</b> the complete app state and use it 
 - Actions Types are in a single file
 
-###`npm run react`
+### Installation
+```$js
+yarn install // only from the root folder (this is a yarn-workspaces monorepo)
+```
+
+### `yarn run react`
 
 Runs the app in the development mode react implementation.<br>
 Open [http://localhost:4444](http://localhost:4444) to view it in the browser.
 
-### `npm run vue`
+### `yarn run vue`
 
 Runs the app in the development mode vue implementation.<br>
 Open [http://localhost:5555](http://localhost:5555) to view it in the browser.
 
 
-### `npm run angular`
+### `yarn run angular`
 
-TBD
+Runs the app in the development mode angular implementation.<br>
+Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
 
-### `npm run slimjs`
+### `yarn run slimjs`
 
-TBD
+Runs the app in the development mode slimjs implementation.<br>
+Open [http://localhost:9000](http://localhost:9000) to view it in the browser.
+
 
 ## About the app
 

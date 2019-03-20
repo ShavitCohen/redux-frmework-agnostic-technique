@@ -29,7 +29,7 @@ Don't be lazy, Run it !
 yarn install // only from the root folder (this is a yarn-workspaces monorepo)
 ```
 
-### react
+### React
 ```
 yarn run react
 ```

@@ -28,11 +28,11 @@ export const apiMiddleware = ({ dispatch, getState }) => (next) => async (action
 
     try {
       const res = await axios(options);
-      const response = { res, feature, sourceAction, meta: action.meta };
+      const response = { res, sourceAction, meta: action.meta };
       dispatch(apiSuccess(response));
     } catch (err) {
       const error = { ...err.response, message: get(err, 'response.data.message') || 'Error' };
-      dispatch(apiError({ error, feature, sourceAction, meta: action.meta }));
+      dispatch(apiError({ error, sourceAction, meta: action.meta }));
     }
   }
 };

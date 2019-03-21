@@ -1,3 +1,4 @@
+import { get } from 'lodash';
 import * as AT from './../../actionTypes';
 
 const INIT_STATE = {
@@ -5,12 +6,18 @@ const INIT_STATE = {
 };
 
 const { SEARCH } = AT;
+const featureName = SEARCH;
 
 const searchReducer = (state = INIT_STATE, action) => {
   const { type, payload } = action;
+  const feature = get(action, 'meta.feature');
+
+  if (feature !== featureName) {
+    return state;
+  }
 
   switch (type) {
-    case `${SEARCH} ${AT.SET_TV_SHOWS}`:
+    case AT.SET_TV_SHOWS:
       return {
         ...state,
         shows: payload,

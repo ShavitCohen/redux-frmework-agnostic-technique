@@ -3,17 +3,23 @@ import * as AT from './../../actionTypes';
 const { SEARCH } = AT;
 
 export const searchTvShows = ({ query }) => ({
-  type: `${SEARCH} ${AT.SEARCH_TV_SHOWS}`,
+  type: AT.SEARCH_TV_SHOWS,
   payload: query,
+  meta: {
+    feature: SEARCH,
+  },
 });
 
 export const userTyping = ({ query }) => ({
-  type: `${SEARCH} ${AT.USER_TYPING}`,
+  type: AT.USER_TYPING,
   payload: query,
+  meta: {
+    feature: SEARCH,
+  },
 });
 
 export const getTvShows = ({ q }) => ({
-  type: `${SEARCH} ${AT.GET_TV_SHOWS.API_REQUEST}`,
+  type: AT.GET_TV_SHOWS.API_REQUEST,
   payload: { q },
   meta: {
     feature: SEARCH,
@@ -24,12 +30,18 @@ export const getTvShows = ({ q }) => ({
 });
 
 export const setTvShows = ({ tvShows }) => ({
-  type: `${SEARCH} ${AT.SET_TV_SHOWS}`,
+  type: AT.SET_TV_SHOWS,
   payload: tvShows,
+  meta: {
+    feature: SEARCH,
+  },
+
 });
 
 export const tvShowSelected = ({ id }) => ({
-  type: `${SEARCH} ${AT.TV_SHOW_SELECTED}`,
+  type: AT.TV_SHOW_SELECTED,
   payload: id,
-
+  meta: {
+    feature: SEARCH,
+  },
 });

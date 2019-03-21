@@ -3,17 +3,23 @@ import * as AT from './../../actionTypes';
 const { SHOW_INFO } = AT;
 
 export const openShowInfoModal = ({ id }) => ({
-  type: `${SHOW_INFO} ${AT.OPEN_SHOW_INFO_MODAL}`,
+  type: AT.OPEN_SHOW_INFO_MODAL,
   payload: id,
+  meta: {
+    feature: SHOW_INFO,
+  },
 });
 
 export const setModalState = ({ state }) => ({
-  type: `${SHOW_INFO} ${AT.SET_MODAL_STATE}`,
+  type: AT.SET_MODAL_STATE,
   payload: state,
+  meta: {
+    feature: SHOW_INFO,
+  },
 });
 
 export const getShowInfo = ({ id }) => ({
-  type: `${SHOW_INFO} ${AT.GET_SHOW_INFO.API_REQUEST}`,
+  type: AT.GET_SHOW_INFO.API_REQUEST,
   meta: {
     feature: SHOW_INFO,
     sourceAction: AT.GET_SHOW_INFO,
@@ -23,6 +29,9 @@ export const getShowInfo = ({ id }) => ({
 });
 
 export const setShowInfo = ({ show }) => ({
-  type: `${SHOW_INFO} ${AT.SET_SHOW_INFO}`,
+  type: AT.SET_SHOW_INFO,
   payload: show,
+  meta: {
+    feature: SHOW_INFO,
+  },
 });

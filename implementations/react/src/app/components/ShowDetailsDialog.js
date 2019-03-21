@@ -61,7 +61,7 @@ class ShowDetailsDialog extends React.Component {
             </Grid>
             <Grid item xs={12}>
               <Grid container spacing={16}>
-                <Grid xs={12}>
+                <Grid item xs={12}>
                   <Typography
                     variant="h6" color="inherit" className={classes.flex}
                   >Cast</Typography>

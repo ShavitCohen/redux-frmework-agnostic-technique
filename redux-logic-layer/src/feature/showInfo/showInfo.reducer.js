@@ -1,3 +1,4 @@
+import { get } from 'lodash';
 import * as AT from './../../actionTypes';
 
 const INIT_STATE = {
@@ -6,15 +7,21 @@ const INIT_STATE = {
 };
 
 const { SHOW_INFO } = AT;
+const featureName = SHOW_INFO;
 
 const showInfoReducer = (state = INIT_STATE, action) => {
-  const { type, payload } = action;
 
+  const { type, payload } = action;
+  const feature = get(action, 'meta.feature');
+
+  if (feature !== featureName) {
+    return state;
+  }
   switch (type) {
-    case `${SHOW_INFO} ${AT.SET_MODAL_STATE}`:
+    case AT.SET_MODAL_STATE:
       return { ...state, isOpen: payload };
 
-    case `${SHOW_INFO} ${AT.SET_SHOW_INFO}`:
+    case AT.SET_SHOW_INFO:
       return { ...state, info: payload };
 
     default:

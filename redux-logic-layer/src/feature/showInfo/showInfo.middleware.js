@@ -1,14 +1,15 @@
+import { get } from 'lodash';
 import * as AT from './../../actionTypes';
 import { setLoader } from '../loaders/loaders.actions';
 import { getShowInfo, setModalState, setShowInfo } from './showInfo.actions';
 
 const { SHOW_INFO } = AT;
 
-export const showInfoMiddleware = ({ getState, dispatch }) => next => async action => {
-  next(action);
-  switch (true) {
-    case action.type.includes(`${SHOW_INFO} ${AT.OPEN_SHOW_INFO_MODAL}`): {
-      const id = action.payload;
+const match = ({ action, dispatch, getState }) => {
+  const { payload, type } = action;
+  switch (type) {
+    case AT.OPEN_SHOW_INFO_MODAL: {
+      const id = payload;
 
       dispatch([
         setModalState({ state: true }),
@@ -18,8 +19,8 @@ export const showInfoMiddleware = ({ getState, dispatch }) => next => async acti
     }
       break;
 
-    case action.type.includes(`${SHOW_INFO} ${AT.GET_SHOW_INFO.SUCCESS}`): {
-      const show = action.payload.data;
+    case AT.GET_SHOW_INFO.SUCCESS: {
+      const show = payload.data;
       dispatch([
         setLoader({ name: 'showInfo', state: false }),
         setShowInfo({ show }),
@@ -30,4 +31,11 @@ export const showInfoMiddleware = ({ getState, dispatch }) => next => async acti
     default:
     // do nothing
   }
+};
+
+const featureName = SHOW_INFO;
+export const showInfoMiddleware = ({ dispatch, getState }) => (next) => (action) => {
+  next(action);
+  const feature = get(action, 'meta.feature');
+  if (feature === featureName) { match({ action, dispatch, getState }); }
 };

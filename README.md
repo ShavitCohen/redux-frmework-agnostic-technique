@@ -20,7 +20,7 @@ In this repo there are four different implementations which all use the same Red
 - [React](https://redux-dev-pattern-react.netlify.com/)
 - [VueJS](https://redux-dev-pattern-vue.netlify.com/)
 - [Angular](https://redux-dev-pattern-angular.netlify.com/)
-- [SlimJS](https://redux-dev-pattern-slimjs.netlify.com/)
+- [SlimJS](https://redux-dev-pattern-slimjs.netlify.com/) (not mobile compatible) 
 
 ## About the app
 

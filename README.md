@@ -1,3 +1,5 @@
+Your UI Framework Has No Soul! 
+==============================
 ## Isolated, Framework agnostic, Redux driven Business logic layer
 
 In this project I introduce a pattern inspired by [Nir Kaufman's book - Thinking in Redux](https://leanpub.com/thinking-in-Redux) <br />

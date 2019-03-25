@@ -13,15 +13,3 @@ self.addEventListener('install', function (event) {
       })
   )
 })
-
-
-self.addEventListener('fetch', function(event) {
-  if (~event.request.url.indexOf('http')) {
-    event.respondWith(
-      caches.match(event.request.url)
-      .then(response => {
-        return response || fetch(event.request)
-      })
-    )
-  }
-});

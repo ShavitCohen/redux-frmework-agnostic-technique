@@ -22,12 +22,11 @@
     }
   },
   "workspaces": [
-    "redux-logic-layer",
+    "packages/*",
     "implementations/*"
   ],
   "dependencies": {
     "cross-env": "*",
-    "cwd": "^0.10.0",
-    "redux-logic-layer": "file:redux-logic-layer"
+    "cwd": "^0.10.0"
   }
 }

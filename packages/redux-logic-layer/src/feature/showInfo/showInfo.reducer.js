@@ -1,5 +1,5 @@
 import { get } from 'lodash';
-import * as AT from './../../actionTypes';
+import * as AT from '../../actionTypes';
 
 const INIT_STATE = {
   isOpen: false,

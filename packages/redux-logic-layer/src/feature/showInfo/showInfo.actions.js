@@ -1,4 +1,4 @@
-import * as AT from './../../actionTypes';
+import * as AT from '../../actionTypes';
 
 const { SHOW_INFO } = AT;
 

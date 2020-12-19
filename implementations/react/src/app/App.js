@@ -1,42 +1,47 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-import './App.css';
-import { searchActions, showInfoActions } from 'redux-logic-layer';
-import { ShowsList } from './components/ShowsList';
-import PrimarySearchAppBar from './components/PrimarySearchAppBar';
-import ShowDetailsDialog from './components/ShowDetailsDialog';
+import "./App.css";
+
+import { searchActions, showInfoActions } from "redux-logic-layer";
+import { ShowsList } from "./components/ShowsList";
+import PrimarySearchAppBar from "./components/PrimarySearchAppBar";
+import ShowDetailsDialog from "./components/ShowDetailsDialog";
 
 const { tvShowSelected, userTyping } = searchActions;
 const { setModalState } = showInfoActions;
 
-class App extends Component {
+const App = () => {
+  const dispatcher = useDispatch();
+  const shows = useSelector(({ search: { shows } }) => shows);
+  const isModalOpen = useSelector(({ showInfo: { isOpen } }) => isOpen);
+  const selectedShowInfo = useSelector(({ showInfo: { info } }) => info);
 
-  render() {
-    const { shows, tvShowSelected, userTyping, isModalOpen, selectedShowInfo, setModalState } = this.props;
-    return (
-      <div className="App">
-        <PrimarySearchAppBar onUserTyping={userTyping} />
-        <div className={'app-body'}>
-          <ShowsList shows={shows} onSelectShow={tvShowSelected} />
-          <ShowDetailsDialog
-            isOpen={isModalOpen} showInfo={selectedShowInfo}
-            handleDialogClose={() => setModalState({ state: false })}
-          />
-        </div>
+  const handleOnSelectShow = ({ id }) => {
+    dispatcher(tvShowSelected({ id }));
+  };
+
+  const handleUserTyping = ({ query }) => {
+    dispatcher(userTyping({ query }));
+  };
+
+  const handleDialogClose = () => {
+    dispatcher(setModalState({ state: false }));
+  };
+
+  return (
+    <div className="App">
+      <PrimarySearchAppBar onUserTyping={handleUserTyping} />
+      <div className={"app-body"}>
+        <ShowsList shows={shows} onSelectShow={handleOnSelectShow} />
+        <ShowDetailsDialog
+          isOpen={isModalOpen}
+          showInfo={selectedShowInfo}
+          onDialogClose={handleDialogClose}
+        />
       </div>
-    );
-  }
-}
-
-const mapStateToProps = ({ search, showInfo }) => {
-  const { shows } = search;
-  const { isOpen: isModalOpen, info: selectedShowInfo } = showInfo;
-  return { shows, isModalOpen, selectedShowInfo };
+    </div>
+  );
 };
 
-export default connect(mapStateToProps, {
-  tvShowSelected,
-  userTyping,
-  setModalState,
-})(App);
+export default App;

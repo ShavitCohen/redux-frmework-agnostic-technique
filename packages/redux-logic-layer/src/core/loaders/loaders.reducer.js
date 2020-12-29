@@ -18,7 +18,7 @@ const loadersReducer = (state = INIT_STATE, action) => {
   }
 
   switch (type) {
-    case `${LOADERS} ${AT.SET_LOADER}`:
+    case AT.SET_LOADER:
       return {
         ...state,
         ...payload,

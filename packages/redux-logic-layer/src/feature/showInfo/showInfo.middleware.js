@@ -1,7 +1,7 @@
 import * as AT from "../../actionTypes";
 import { setLoader } from "../../core/loaders/loaders.actions";
 import { getShowInfo, setModalState, setShowInfo } from "./showInfo.actions";
-import createMapMiddleware from "../../mapMiddleware";
+import createMapMiddleware from "../../createMapMiddleware";
 
 const { SHOW_INFO } = AT;
 const feature = SHOW_INFO;

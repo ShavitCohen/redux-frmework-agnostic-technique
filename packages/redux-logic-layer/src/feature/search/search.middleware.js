@@ -3,7 +3,7 @@ import { setLoader } from "../../core/loaders/loaders.actions";
 import { getTvShows, searchTvShows, setTvShows } from "./search.actions";
 import { openShowInfoModal } from "../showInfo/showInfo.actions";
 import { debounce } from "lodash";
-import createMapMiddleware from "../../mapMiddleware";
+import createMapMiddleware from "../../createMapMiddleware";
 
 const { SEARCH } = AT;
 const feature = SEARCH;
